@@ -1,0 +1,103 @@
+<div class="container-fluid d-flex justify-content-center">
+    <div class="d-flex flex-column w-100">
+        <div class="bd-highlight d-flex justify-content-center">
+            <h1>Taches</h1>
+            <button class="btn btn-outline-secondary m-1" (click)="loggout()">Logout</button>
+        </div>
+
+        <div class="mt-5 d-flex flex-row justify-content-around">
+
+            <!----------------------------------------------------------------------------------------------------------------------->
+            <!--liste undifined-->
+            <div class="d-flex flex-column justify-content-around">
+                <div id="statut" class="d-flex justify-content-center">
+                    <h5>UNDIFINED</h5>
+                </div>
+                <div class="d-flex flex-row justify-content-center ">
+                    <input class="saisieInput" type="text" name="tache" placeholder="tache" [(ngModel)]="newTache.titre">
+        
+                    <button class="btn btn-primary buttonAjoutTache" value="Ajouter" (click)='ajouter("")'>Ajouter</button>
+                </div>
+                <div class="mt-3 d-flex  justify-content-center">
+                    <div id="listeTaches" class="w-100 d-flex flex-column">
+                        <div class="d-flex justify-content-between m-1" *ngFor="let tache of (taches | filtreTache:filter)">
+                            <div class="d-flex flex-row justify-content-between" [ngClass]="tache.statut == ''? '' : 'd-none' ">
+                                <div class="w-50">{{tache.titre}}</div>
+                                <button class="btn btn-outline-danger m-1" (click)='supprimer(tache)'>Supprimer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--liste attente-->
+            <div class="d-flex flex-column justify-content-around">
+                <div id="statut" class="d-flex justify-content-center">
+                    <h5>ATTENTE</h5>
+                </div>
+                <div class="d-flex flex-row justify-content-center ">
+                    <input class="saisieInput" type="text" name="tache" placeholder="tache" [(ngModel)]="newTache.titre">
+        
+                    <button class="btn btn-primary buttonAjoutTache" value="Ajouter" (click)='ajouter("ATTENTE")'>Ajouter</button>
+                </div>
+                <div class="mt-3 d-flex  justify-content-center">
+                    <div id="listeTaches" class="d-flex  flex-column">
+                        <div class="d-flex justify-content-between m-1" *ngFor="let tache of (taches | filtreTache:filter)">
+                            <div class="d-flex flex-row justify-content-between" [ngClass]="tache.statut == 'ATTENTE'? '' : 'd-none' ">
+                                <div class="w-50">{{tache.titre}}</div>
+                                <button class="btn btn-outline-danger m-1" (click)='supprimer(tache)'>Supprimer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--liste "en cours"-->
+            <div class="d-flex flex-column justify-content-around">
+                <div id="statut" class="d-flex justify-content-center">
+                    <h5>EN COURS</h5>
+                </div>
+                <div class="d-flex flex-row justify-content-center ">
+                    <input class="saisieInput" type="text" name="tache" placeholder="tache" [(ngModel)]="newTache.titre">
+        
+                    <button class="btn btn-primary buttonAjoutTache" value="Ajouter" (click)='ajouter("EN COURS")'>Ajouter</button>
+                </div>
+                <div class="mt-3 d-flex  justify-content-center">
+                    <div id="listeTaches" class="d-flex  flex-column">
+                        <div class="d-flex justify-content-between m-1" *ngFor="let tache of (taches | filtreTache:filter)">
+                            <div class="d-flex flex-row justify-content-between" [ngClass]="tache.statut == 'EN COURS'? '' : 'd-none' ">
+                                <div class="w-50">{{tache.titre}}</div>
+                                <button class="btn btn-outline-danger m-1" (click)='supprimer(tache)'>Supprimer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--liste termine-->
+            <div class="d-flex flex-column justify-content-around">
+                <div id="statut" class="d-flex justify-content-center">
+                    <h5>TERMINE</h5>
+                </div>
+                <div class="d-flex flex-row justify-content-center ">
+                    <input class="saisieInput" type="text" name="tache" placeholder="tache" [(ngModel)]="newTache.titre">
+        
+                    <button class="btn btn-primary buttonAjoutTache" value="Ajouter" (click)='ajouter("TERMINE")'>Ajouter</button>
+                </div>
+                <div class="mt-3 d-flex  justify-content-center">
+                    <div id="listeTaches" class="d-flex  flex-column">
+                        <div class="d-flex justify-content-between m-1" *ngFor="let tache of (taches | filtreTache:filter)">
+                            <div class="d-flex flex-row justify-content-between" [ngClass]="tache.statut == 'TERMINE'? '' : 'd-none' ">
+                                <div class="w-50">{{tache.titre}}</div>
+                                <button class="btn btn-outline-danger m-1" (click)='supprimer(tache)'>Supprimer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!------------------------------------------------------------------------------------------------------------------------>
+
+        </div>
+    </div>
+</div>
