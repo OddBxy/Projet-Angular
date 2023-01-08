@@ -102,26 +102,15 @@ export class TachesComponent implements OnInit {
       termine: false,
       statut:''
     }
-
     
-    if(statut == "UNDIFINED"){
-      event.item.data.statut = ''  
-      tache.statut = ''
-      this.tacheService.updateTaches(tache).subscribe({
-        next: (data) => {
-        }
-      });
-    }
-    else{
-      event.item.data.statut = statut
-      tache.statut = statut
-      this.tacheService.updateTaches(tache).subscribe({
-        next: (data) => {
-        }
-      });
-    }
-    
-
+    event.item.data.statut = statut
+    tache.statut = statut
+    this.tacheService.updateTaches(tache).subscribe({
+      next: (data) => {
+      }
+    });
+      
+  
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
