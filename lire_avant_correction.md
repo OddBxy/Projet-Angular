@@ -4,6 +4,9 @@ Ce dépôt est donc constitué de plusieurs branches, chacune d'elles représent
 Il y a même une étape en plus, "ETAPE2-V2" qu'on abordera plus tard.
 Il sera intéressant de lire le "readme" de chaque branche à fin de comprendre ce qui à été réalisé. 
 
+Il est aussi conseiller de refaire les commandes "npm intall" dans chaque partie angular et "npm intall mongod" dans chaque partie APi
+Sinon vous pouvez tout aussi copier coller vos propres fichier, ce sera un peu plus rapide 
+
 L'étape 1 : 
   Cette branche ne possède pas le dossier node_modules dans aucunes des parties (j'avais pas git, et le fichier est trop volumineux pour passer par le site) 
   
