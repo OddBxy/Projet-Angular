@@ -25,8 +25,8 @@
                         <button class="btn btn-primary buttonAjoutTache" value="Ajouter" (click)="ajouter(liste)">Ajouter</button>
                     </div>
 
-                    <div cdkDropList class="d-flex flex-column justify-content-between mt-4 item-list" (cdkDropListDropped)="drop($event, liste)">
-                        <div *ngFor="let tache of liste.Taches" class="d-flex justify-content-between flex-row" [cdkDragData]="tache" cdkDrag >
+                    <div cdkDropList class="d-flex flex-column justify-content-between mt-4 item-list example-list" (cdkDropListDropped)="drop($event, liste)">
+                        <div *ngFor="let tache of liste.Taches" class="d-flex justify-content-between flex-row example-box" [cdkDragData]="tache" cdkDrag >
                             <div [ngClass]="tache.termine? 'text-decoration-line-through' : '' ">{{tache.titre}}</div>
                             <button class="btn btn-outline-danger m-1" (click)='supprimer(tache, liste)'>Supprimer</button>
                         </div>
