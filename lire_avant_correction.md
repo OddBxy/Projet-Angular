@@ -10,9 +10,9 @@ Sinon vous pouvez tout aussi copier coller vos propres fichier, ce sera un peu p
 L'étape 1 : 
   Cette branche ne possède pas le dossier node_modules dans aucunes des parties (j'avais pas git, et le fichier est trop volumineux pour passer par le site) 
   
-  Pour réaliser cette étape, il a fallu créer 4 div basées sur le modèle déjà present, et rajouter un champ statut dans le modèle tache de tache.ts.
-  Afin que les listes affiche les taches avec le bon statut, on a utilisé *ngFor permettant d'afficher ou non une tache selon son statut.
+  Pour réaliser cette étape, il a fallu créer 4 div basées sur le modèle déjà présent, et rajouter un champ statut dans le modèle tache de tache.ts.
+  Afin que les listes affichent les taches avec le bon statut, on a utilisé *ngFor permettant d'afficher ou non une tache selon son statut.
   
-  On a aussi rajouté une option permettant d'enrgister une nouvel utilisateur, fonction signIn qui appel la fonction submit
+  On a aussi rajouté une option permettant d'enrgister une nouvel utilisateur, fonction signIn qui appelle la fonction submit
   
   
